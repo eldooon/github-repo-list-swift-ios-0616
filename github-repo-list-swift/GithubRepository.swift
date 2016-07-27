@@ -9,7 +9,15 @@
 import UIKit
 
 class GithubRepository {
+    var fullName: String
+    var htmlURL: NSURL
+    var repositoryID: String
     
-    
+    init(dictionary: NSDictionary) {
+
+        fullName = dictionary["full_name"] as! String
+        htmlURL = NSURL(string: dictionary["html_url"] as! String)!
+        repositoryID = dictionary["id"]!.stringValue
+    }
     
 }
